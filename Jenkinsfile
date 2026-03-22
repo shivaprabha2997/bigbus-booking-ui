@@ -2,10 +2,6 @@ pipeline {
 
     agent any
 
-    tools {
-        maven 'Maven'
-    }
-
     environment {
         IMAGE_NAME = "shivadocker2997/bigbus-app"
         CONTAINER_NAME = "bigbus-container"
