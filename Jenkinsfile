@@ -66,11 +66,11 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh '''
+                sh """
                 docker stop $CONTAINER_NAME || true
                 docker rm $CONTAINER_NAME || true
-                sh 'docker run -d -p 8081:8080 --name $CONTAINER_NAME $IMAGE_NAME'
-                '''
+                docker run -d -p 8081:8080 --name $CONTAINER_NAME $IMAGE_NAME
+                """
             }
         }
 
